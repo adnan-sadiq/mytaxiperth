@@ -236,7 +236,16 @@
           <div class="hero-card" id="booking">
             <h2>Book your taxi</h2>
             <p>Fast booking with instant confirmation.</p>
-            <form id="booking-form" class="booking-form">
+            <form
+              id="booking-form"
+              class="booking-form"
+              action="https://formsubmit.co/mytaxiperth@gmail.com"
+              method="POST"
+              data-email-submit="true"
+            >
+              <input type="hidden" name="_subject" value="New Taxi Booking - My Taxi Perth" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
               <label>
                 Pickup location
                 <input
@@ -280,6 +289,9 @@
                   />
                 </label>
               </div>
+              <p class="form-success" role="status" aria-live="polite">
+                Your booking request has been received. We will get in touch within 15 minutes.
+              </p>
               <button class="btn primary full" type="submit">Submit Booking</button>
               <p class="form-note">
                 By submitting, you agree to be contacted to confirm your ride.
@@ -539,6 +551,59 @@
                 <li>Event transport</li>
                 <li>Pre & post event</li>
               </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="gallery">
+        <div class="container">
+          <div class="section-header">
+            <h2>Comfortable, Clean, and Easy Rides</h2>
+            <p>Light, welcoming vehicles and professional drivers for every journey.</p>
+          </div>
+          <div class="gallery-grid">
+            <article class="gallery-card">
+              <img
+                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=70"
+                alt="Comfortable taxi interior with clean seating"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="600"
+              />
+              <div class="gallery-caption">
+                <h3>Clean, Comfortable Vehicles</h3>
+                <p>Well-maintained taxis with air conditioning and spacious seating.</p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img
+                src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&w=900&q=70"
+                alt="Airport transfer taxi ready for pickup"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="600"
+              />
+              <div class="gallery-caption">
+                <h3>Airport Transfers</h3>
+                <p>Reliable pickups and drop-offs for all Perth Airport terminals.</p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img
+                src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=70"
+                alt="Taxi driving through city streets"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="600"
+              />
+              <div class="gallery-caption">
+                <h3>City & Suburb Rides</h3>
+                <p>Easy travel across Perth CBD and all metropolitan suburbs.</p>
+              </div>
             </article>
           </div>
         </div>

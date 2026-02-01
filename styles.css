@@ -473,6 +473,21 @@ img {
   margin-top: 8px;
 }
 
+.form-success {
+  display: none;
+  background: #e9f7ef;
+  color: #0f5132;
+  border: 1px solid #b7dfc8;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.form-success.show {
+  display: block;
+}
+
 .booking-form button[type="submit"] {
   margin-top: 8px;
   font-size: 1rem;
@@ -898,6 +913,54 @@ img {
   font-weight: 700;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.gallery-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid var(--gray-200);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  border-color: var(--yellow);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-caption {
+  padding: 20px 24px 24px;
+}
+
+.gallery-caption h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.gallery-caption p {
+  color: var(--gray-700);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .suburbs-grid {
     grid-template-columns: 1fr;
@@ -906,6 +969,10 @@ img {
   
   .suburb-category {
     padding: 20px;
+  }
+
+  .gallery-card img {
+    height: 200px;
   }
 }
 
