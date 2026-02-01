@@ -1000,11 +1000,35 @@ body.nav-open {
 
 @media (max-width: 900px) {
   .header-inner {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto 1fr;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    order: 1;
+  }
+
+  .nav-toggle span {
+    width: 24px;
+    height: 3px;
+    background: var(--black);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .logo {
+    order: 2;
   }
 
   .header-actions {
     order: 3;
+    margin-left: auto;
   }
 
   .whatsapp-btn span {
@@ -1023,16 +1047,16 @@ body.nav-open {
     top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
     background: var(--white);
     border-radius: 0;
     padding: 20px;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     border-top: 1px solid var(--gray-200);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     display: none;
     margin: 0;
+    max-height: calc(100vh - 72px);
     overflow-y: auto;
     z-index: 999;
   }
@@ -1044,7 +1068,8 @@ body.nav-open {
   .site-nav a {
     width: 100%;
     justify-content: center;
-    padding: 12px 16px;
+    padding: 14px 20px;
+    font-size: 1.05rem;
   }
 
   .nav-cta {
@@ -1052,29 +1077,28 @@ body.nav-open {
     margin-top: 8px;
   }
 
-  .nav-toggle {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    order: 2;
-  }
-
-  .nav-toggle span {
-    width: 24px;
-    height: 3px;
-    background: var(--black);
-    border-radius: 3px;
-    transition: all 0.3s ease;
+  .hero {
+    padding: 40px 0 60px;
   }
 
   .hero-stats {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 16px;
+    padding: 16px 0;
+    justify-content: space-around;
+  }
+
+  .stat-item {
+    flex: 1;
     text-align: center;
+  }
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
   }
 
   .booking-cta-card {
@@ -1089,37 +1113,83 @@ body.nav-open {
 
 @media (max-width: 600px) {
   .header-inner {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto 1fr;
+    padding: 12px 0;
   }
 
   .header-phone {
     display: none;
   }
 
+  .logo-img {
+    height: 36px;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
   .hero {
-    padding: 60px 0 80px;
+    padding: 30px 0 50px;
+  }
+
+  .hero-pill {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+  }
+
+  .hero-copy h1 {
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-stats {
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px 0;
+    margin-bottom: 20px;
+  }
+
+  .stat-item {
+    flex: 1;
+  }
+
+  .stat-number {
+    font-size: 1.1rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
+    padding: 12px 20px;
   }
 
-  .hero-stats {
-    gap: 16px;
+  .hero-card {
+    padding: 24px 20px;
   }
 
-  .stat-number {
-    font-size: 1.5rem;
+  .hero-card h2 {
+    font-size: 1.3rem;
   }
 
   .booking-cta-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .whatsapp-float {
@@ -1148,5 +1218,17 @@ body.nav-open {
 
   .service-card {
     padding: 24px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
   }
 }
