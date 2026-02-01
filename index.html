@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Taxi Perth | Affordable Taxi Booking</title>
+    <meta
+      name="description"
+      content="Book affordable, reliable taxis in Perth. Airport transfers, city rides, and long distance trips with 24/7 service."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#home">
+          <span class="logo-mark">MT</span>
+          <span class="logo-text">My Taxi Perth</span>
+        </a>
+        <a class="header-phone" href="tel:+61855501234">
+          <span class="phone-label">Call 24/7</span>
+          <span class="phone-number">+61 8 5550 1234</span>
+        </a>
+        <button class="nav-toggle" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav">
+          <a href="#services">Services</a>
+          <a href="#why">Why Us</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="hero-pill">Affordable • Reliable • 24/7</p>
+            <h1>Affordable taxi rides across Perth.</h1>
+            <p class="hero-subtitle">
+              Book in seconds for airport transfers, city rides, and long-distance
+              travel with professional local drivers.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#booking">Book Now</a>
+              <a class="btn ghost" href="tel:+61855501234">Call +61 8 5550 1234</a>
+            </div>
+          </div>
+          <div class="hero-card" id="booking">
+            <h2>Book your taxi</h2>
+            <p>Fast booking with instant confirmation.</p>
+            <form id="booking-form" class="booking-form">
+              <label>
+                Pickup location
+                <input
+                  type="text"
+                  name="pickup"
+                  placeholder="e.g. Perth Airport (T1)"
+                  required
+                />
+              </label>
+              <label>
+                Drop-off location
+                <input
+                  type="text"
+                  name="dropoff"
+                  placeholder="e.g. Elizabeth Quay"
+                  required
+                />
+              </label>
+              <div class="form-row">
+                <label>
+                  Date
+                  <input type="date" name="date" required />
+                </label>
+                <label>
+                  Time
+                  <input type="time" name="time" required />
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  Name
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+                <label>
+                  Phone
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="04xx xxx xxx"
+                    required
+                  />
+                </label>
+              </div>
+              <button class="btn primary full" type="submit">Submit Booking</button>
+              <p class="form-note">
+                By submitting, you agree to be contacted to confirm your ride.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>Services</h2>
+            <p>Tailored taxi rides for every travel need.</p>
+          </div>
+          <div class="grid three">
+            <article class="card">
+              <h3>Airport Transfers</h3>
+              <p>On-time pickups and drop-offs for all Perth terminals.</p>
+            </article>
+            <article class="card">
+              <h3>City Rides</h3>
+              <p>Comfortable rides for business meetings, dining, and events.</p>
+            </article>
+            <article class="card">
+              <h3>Long Distance</h3>
+              <p>Fixed pricing options for regional trips and day tours.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="why">
+        <div class="container">
+          <div class="section-header">
+            <h2>Why choose us</h2>
+            <p>Premium service without premium pricing.</p>
+          </div>
+          <div class="grid three">
+            <article class="card">
+              <h3>Reliable Drivers</h3>
+              <p>Licensed, experienced drivers focused on safety.</p>
+            </article>
+            <article class="card">
+              <h3>24/7 Service</h3>
+              <p>We are available day and night, including weekends.</p>
+            </article>
+            <article class="card">
+              <h3>Affordable Pricing</h3>
+              <p>Upfront quotes with no hidden fees.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <h2>Testimonials</h2>
+            <p>Trusted by Perth locals and visitors.</p>
+          </div>
+          <div class="grid three">
+            <figure class="card quote">
+              <blockquote>
+                “Booked an early airport ride and the driver arrived 10 minutes
+                early. Great service!”
+              </blockquote>
+              <figcaption>— Sarah K.</figcaption>
+            </figure>
+            <figure class="card quote">
+              <blockquote>
+                “Clean car, friendly driver, and the fare was cheaper than expected.”
+              </blockquote>
+              <figcaption>— Michael T.</figcaption>
+            </figure>
+            <figure class="card quote">
+              <blockquote>
+                “Fast booking process and the call center confirmed right away.”
+              </blockquote>
+              <figcaption>— Ayesha R.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <h2>Contact us</h2>
+            <p>Call now to book a ride or ask about pricing.</p>
+            <a class="btn primary" href="tel:+61855501234">Call +61 8 5550 1234</a>
+          </div>
+          <div class="card contact-card">
+            <h3>Service area</h3>
+            <p>Perth CBD, Fremantle, Joondalup, Midland, and surrounding regions.</p>
+            <p class="contact-info">
+              Email: <a href="mailto:bookings@mytaxiperth.com">bookings@mytaxiperth.com</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>My Taxi Perth</h3>
+          <p>Affordable taxi bookings with premium service.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <p>
+            Phone: <a href="tel:+61855501234">+61 8 5550 1234</a>
+          </p>
+          <p>Email: bookings@mytaxiperth.com</p>
+        </div>
+        <div>
+          <p class="footer-heading">Service Area</p>
+          <p>Perth Metro and regional WA.</p>
+        </div>
+      </div>
+      <p class="footer-bottom">© 2026 My Taxi Perth. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
