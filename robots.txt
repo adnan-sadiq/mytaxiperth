@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /terminals/
+
+# Sitemap
+Sitemap: https://www.mytaxiperth.au/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+

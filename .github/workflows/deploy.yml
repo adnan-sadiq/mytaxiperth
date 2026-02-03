@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  CLOUDFRONT_DISTRIBUTION_ID: E2J5OEMZNXCXQD
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -35,4 +38,9 @@ jobs:
             --exclude "*.yml" \
             --exclude "*.yaml"
 
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
 
