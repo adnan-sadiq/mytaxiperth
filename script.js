@@ -3,6 +3,15 @@ const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const siteHeader = document.querySelector(".site-header");
 
+const trackConversionEvent = (action) => {
+  if (!action || typeof window.gtag !== "function") return;
+  window.gtag("event", "generate_lead", {
+    event_category: "engagement",
+    event_label: action,
+    value: 1
+  });
+};
+
 const padTime = (value) => String(value).padStart(2, "0");
 
 const setDefaultBookingDateTime = () => {
@@ -31,18 +40,20 @@ const setDefaultBookingDateTime = () => {
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
-  
-  if (currentScroll > 50) {
-    siteHeader.classList.add("scrolled");
-  } else {
-    siteHeader.classList.remove("scrolled");
+
+  if (siteHeader) {
+    if (currentScroll > 50) {
+      siteHeader.classList.add("scrolled");
+    } else {
+      siteHeader.classList.remove("scrolled");
+    }
   }
-  
+
   lastScroll = currentScroll;
 });
 
 const closeNavOnResize = () => {
-  if (window.innerWidth > 900 && siteNav.classList.contains("open")) {
+  if (siteNav && window.innerWidth > 900 && siteNav.classList.contains("open")) {
     siteNav.classList.remove("open");
   }
 };
@@ -56,7 +67,7 @@ if (navToggle) {
 
 // Close nav when clicking outside
 document.addEventListener("click", (e) => {
-  if (siteNav && !siteNav.contains(e.target) && !navToggle.contains(e.target)) {
+  if (siteNav && navToggle && !siteNav.contains(e.target) && !navToggle.contains(e.target)) {
     if (window.innerWidth <= 900) {
       siteNav.classList.remove("open");
       document.body.classList.remove("nav-open");
@@ -66,11 +77,18 @@ document.addEventListener("click", (e) => {
 
 window.addEventListener("resize", closeNavOnResize);
 
+document.querySelectorAll("[data-track-action]").forEach((element) => {
+  element.addEventListener("click", () => {
+    trackConversionEvent(element.getAttribute("data-track-action"));
+  });
+});
+
 if (bookingForm) {
   setDefaultBookingDateTime();
 
   bookingForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    trackConversionEvent("booking_form_submit");
     const formData = new FormData(bookingForm);
 
     const submitBtn = bookingForm.querySelector('button[type="submit"]');
@@ -136,7 +154,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       
       // Close mobile nav if open
       if (window.innerWidth <= 900) {
-        siteNav.classList.remove("open");
+        if (siteNav) {
+          siteNav.classList.remove("open");
+        }
         document.body.classList.remove("nav-open");
       }
     }
